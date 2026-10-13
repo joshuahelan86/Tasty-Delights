@@ -1,0 +1,660 @@
+<html>
+<head>
+    <title>Menu | Tasty Delights</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #cfe3ff;
+            color: #111;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            min-height: 82px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #102a47;
+            border: 4px solid #8eb6f5;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 5px 14px #0007;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            color: #8eb6f5;
+            text-decoration: none;
+            font-size: 19px;
+            padding: 12px 14px;
+            border-radius: 7px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #102a47;
+            background: #8eb6f5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 65px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            margin-bottom: 18px;
+            text-shadow: 4px 5px 6px #0006;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto 28px;
+            font-size: 21px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            border: 0;
+            background: #2466c4;
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px #0005;
+        }
+
+        .button:hover {
+            background: #174a91;
+        }
+
+        .section {
+            margin: 18px 4px;
+            padding: 45px 4%;
+            background: linear-gradient(110deg, #2466c4, #173c6d);
+            border: 4px solid #102a47;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px #0007;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-shadow: 2px 3px 4px #0007;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .card {
+            min-height: 350px;
+            padding: 28px 20px;
+            background: #fff;
+            border-radius: 13px;
+            box-shadow: 0 5px 12px #0006;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .food-icon {
+            font-size: 70px;
+            margin: 8px 0 15px;
+        }
+
+        .card h3 {
+            font-size: 26px;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .card strong {
+            display: block;
+            font-size: 23px;
+            color: #174a91;
+            margin-bottom: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #102a47;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 950px) {
+            .navbar {
+                justify-content: center;
+                padding: 15px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links a {
+                font-size: 15px;
+                padding: 9px 8px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Tasty Delights
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html" class="active">
+                Menu
+            </a>
+
+            <a href="order.html">
+                Order
+            </a>
+
+            <a href="contacts.html">
+                Contacts
+            </a>
+
+            <a href="foods.html">
+                Foods
+            </a>
+
+            <a href="info.html">
+                Info
+            </a>
+
+            <a href="delivery.html" id="deliveryLink">
+                Delivery
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>
+            Our Menu
+        </h1>
+
+        <p>
+            Choose from our delicious selection of food and drinks.
+        </p>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>
+            Delicious Choices
+        </h2>
+
+
+        <div class="cards">
+
+
+            <!-- Cheesy Pizza -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍕
+                </div>
+
+                <h3>
+                    Cheesy Pizza
+                </h3>
+
+                <p>
+                    Hot and cheesy pizza made with delicious toppings.
+                </p>
+
+                <strong>
+                    ₹199
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Cheesy%20Pizza"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Classic Burger -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍔
+                </div>
+
+                <h3>
+                    Classic Burger
+                </h3>
+
+                <p>
+                    A juicy burger with fresh vegetables and tasty sauce.
+                </p>
+
+                <strong>
+                    ₹149
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Classic%20Burger"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Italian Pasta -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍝
+                </div>
+
+                <h3>
+                    Italian Pasta
+                </h3>
+
+                <p>
+                    Creamy and flavorful pasta prepared Italian style.
+                </p>
+
+                <strong>
+                    ₹179
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Italian%20Pasta"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Veggie Tacos -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🌮
+                </div>
+
+                <h3>
+                    Veggie Tacos
+                </h3>
+
+                <p>
+                    Crispy tacos filled with fresh vegetables and tasty flavors.
+                </p>
+
+                <strong>
+                    ₹129
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Veggie%20Tacos"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Cool Drink -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🥤
+                </div>
+
+                <h3>
+                    Cool Drink
+                </h3>
+
+                <p>
+                    A refreshing cold drink to enjoy with your meal.
+                </p>
+
+                <strong>
+                    ₹79
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Cool%20Drink"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Crispy Chicken -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍗
+                </div>
+
+                <h3>
+                    Crispy Chicken
+                </h3>
+
+                <p>
+                    Crispy and delicious chicken prepared with special seasoning.
+                </p>
+
+                <strong>
+                    ₹189
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Crispy%20Chicken"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- French Fries -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍟
+                </div>
+
+                <h3>
+                    French Fries
+                </h3>
+
+                <p>
+                    Golden and crispy fries perfect for any meal.
+                </p>
+
+                <strong>
+                    ₹99
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=French%20Fries"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Veg Wrap -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🌯
+                </div>
+
+                <h3>
+                    Veg Wrap
+                </h3>
+
+                <p>
+                    A tasty wrap filled with fresh vegetables and delicious sauce.
+                </p>
+
+                <strong>
+                    ₹129
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Veg%20Wrap"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Club Sandwich -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🥪
+                </div>
+
+                <h3>
+                    Club Sandwich
+                </h3>
+
+                <p>
+                    A delicious sandwich packed with fresh and tasty ingredients.
+                </p>
+
+                <strong>
+                    ₹139
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Club%20Sandwich"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Ice Cream -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍨
+                </div>
+
+                <h3>
+                    Ice Cream
+                </h3>
+
+                <p>
+                    A cool and creamy dessert for a sweet ending.
+                </p>
+
+                <strong>
+                    ₹89
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Ice%20Cream"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Chocolate Cake -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍰
+                </div>
+
+                <h3>
+                    Chocolate Cake
+                </h3>
+
+                <p>
+                    Soft and delicious chocolate cake with a rich flavor.
+                </p>
+
+                <strong>
+                    ₹119
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Chocolate%20Cake"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <!-- Sweet Pancakes -->
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🥞
+                </div>
+
+                <h3>
+                    Sweet Pancakes
+                </h3>
+
+                <p>
+                    Fluffy pancakes served with a delicious sweet topping.
+                </p>
+
+                <strong>
+                    ₹109
+                </strong>
+
+                <a
+                    class="button"
+                    href="order.html?food=Sweet%20Pancakes"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Tasty Delights | Codingal Project
+
+    </footer>
+
+
+    <script>
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                console.log(
+                    "Opening " + link.textContent.trim() + " page"
+                );
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

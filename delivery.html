@@ -1,0 +1,598 @@
+<html>
+<head>
+    <title>Delivery - Tasty Delights</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #cfe3ff;
+            color: #111;
+        }
+
+
+        
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            min-height: 82px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #102a47;
+            border: 4px solid #8eb6f5;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 5px 14px #0007;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            color: #8eb6f5;
+            text-decoration: none;
+            font-size: 19px;
+            padding: 12px 14px;
+            border-radius: 7px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #102a47;
+            background: #8eb6f5;
+        }
+
+
+        
+
+        .section {
+            margin: 18px 4%;
+            padding: 45px 4%;
+            background: linear-gradient(110deg, #2466c4, #173c6d);
+            border: 4px solid #102a47;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px #0007;
+            text-align: center;
+        }
+
+        .section h1 {
+            color: #fff;
+            font-size: 45px;
+            margin-bottom: 15px;
+            text-shadow: 2px 3px 4px #0007;
+        }
+
+        .section > p {
+            color: #fff;
+            font-size: 19px;
+            margin-bottom: 35px;
+        }
+
+
+        
+
+        .delivery-box {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 12px #0006;
+        }
+
+
+        
+
+        .status-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .status {
+            font-size: 32px;
+            color: #174a91;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+
+        
+
+        .progress-container {
+            width: 100%;
+            height: 30px;
+            background: #d8e5f5;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #9db8dc;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                #2466c4,
+                #5b9bf0
+            );
+            border-radius: 20px;
+            transition: width 1s ease;
+        }
+
+        .progress-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #174a91;
+            margin-bottom: 30px;
+        }
+
+
+        
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .step {
+            padding: 18px 10px;
+            background: #edf5ff;
+            border: 2px solid #c1d5ef;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .step-icon {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .step h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .step p {
+            font-size: 14px;
+        }
+
+        .step.active {
+            background: #8eb6f5;
+            border-color: #174a91;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px #0004;
+        }
+
+
+        
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #102a47;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .delivery-disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+
+        
+
+        @media (max-width: 950px) {
+
+            .navbar {
+                justify-content: center;
+                padding: 15px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links a {
+                font-size: 15px;
+                padding: 9px 8px;
+            }
+
+            .section h1 {
+                font-size: 34px;
+            }
+
+            .delivery-box {
+                padding: 25px 18px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Tasty Delights
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="order.html">
+                Order
+            </a>
+
+            <a href="contacts.html">
+                Contacts
+            </a>
+
+            <a href="foods.html">
+                Foods
+            </a>
+
+            <a href="info.html">
+                Info
+            </a>
+
+            <a href="delivery.html" class="active" id="deliveryLink">
+                Delivery
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    
+
+    <section class="section">
+
+        <h1>
+            🚚 Delivery Tracking
+        </h1>
+
+        <p>
+            Track your Tasty Delights order from the kitchen to your door!
+        </p>
+
+
+        <div class="delivery-box">
+
+
+            
+
+            <div class="status-icon" id="statusIcon">
+                📝
+            </div>
+
+            <h2 class="status" id="status">
+                Order Received
+            </h2>
+
+            <p class="description" id="description">
+                Your order has been received and is being prepared by our restaurant team.
+            </p>
+
+
+            
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"></div>
+
+            </div>
+
+            <div
+                class="progress-text"
+                id="progressText">
+                0%
+            </div>
+
+
+           
+
+            <div class="steps">
+
+
+                <div
+                    class="step active"
+                    id="step1">
+
+                    <div class="step-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Order Received
+                    </h3>
+
+                    <p>
+                        Your order is confirmed.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step2">
+
+                    <div class="step-icon">
+                        👨‍🍳
+                    </div>
+
+                    <h3>
+                        Preparing
+                    </h3>
+
+                    <p>
+                        Your food is being prepared.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step3">
+
+                    <div class="step-icon">
+                        🛵
+                    </div>
+
+                    <h3>
+                        On The Way
+                    </h3>
+
+                    <p>
+                        Your order is out for delivery.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step4">
+
+                    <div class="step-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Delivered
+                    </h3>
+
+                    <p>
+                        Your food has arrived!
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+  
+
+    <footer>
+
+        © 2026 Tasty Delights | Codingal Project
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+    
+    if (localStorage.getItem("orderPlaced") !== "true") {
+
+        alert("Please place an order before viewing delivery.");
+
+        window.location.href = "order.html";
+
+    }
+
+
+    const customerName =
+        localStorage.getItem("customerName");
+
+    const orderedFood =
+        localStorage.getItem("orderedFood");
+
+    const quantity =
+        localStorage.getItem("quantity");
+
+
+    console.log(
+        "Delivery for:",
+        customerName,
+        orderedFood,
+        quantity
+    );
+
+        const statuses = [
+
+            {
+                icon: "📝",
+                title: "Order Received",
+                description:
+                    "Your order has been received and is being prepared by our restaurant team.",
+                progress: 10
+            },
+
+            {
+                icon: "👨‍🍳",
+                title: "Preparing Your Food",
+                description:
+                    "Our chefs are preparing your delicious food using fresh ingredients.",
+                progress: 40
+            },
+
+            {
+                icon: "🛵",
+                title: "Out for Delivery",
+                description:
+                    "Your food has been packed and our delivery partner is on the way to you.",
+                progress: 70
+            },
+
+            {
+                icon: "🏠",
+                title: "Delivered",
+                description:
+                    "Your Tasty Delights order has been delivered. Enjoy your meal!",
+                progress: 100
+            }
+
+        ];
+
+
+        let currentStep = 0;
+
+
+        function updateDelivery() {
+
+            const current = statuses[currentStep];
+
+
+            document.getElementById("statusIcon").textContent =
+                current.icon;
+
+            document.getElementById("status").textContent =
+                current.title;
+
+            document.getElementById("description").textContent =
+                current.description;
+
+            document.getElementById("progressBar").style.width =
+                current.progress + "%";
+
+            document.getElementById("progressText").textContent =
+                current.progress + "%";
+
+
+            for (let i = 1; i <= 4; i++) {
+
+                const step =
+                    document.getElementById("step" + i);
+
+                if (i <= currentStep + 1) {
+
+                    step.classList.add("active");
+
+                } else {
+
+                    step.classList.remove("active");
+
+                }
+
+            }
+
+        }
+
+
+        updateDelivery();
+
+
+        setInterval(() => {
+
+            if (currentStep < statuses.length - 1) {
+
+                currentStep++;
+
+                updateDelivery();
+
+            }
+
+        }, 5000);
+
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                console.log(
+                    "Opening " + link.textContent.trim() + " page"
+                );
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

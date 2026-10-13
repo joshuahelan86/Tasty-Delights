@@ -1,0 +1,474 @@
+<html>
+<head>
+  <title>Order | Tasty Delights</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #cfe3ff;
+            color: #111;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            min-height: 82px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #102a47;
+            border: 4px solid #8eb6f5;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 5px 14px #0007;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            color: #8eb6f5;
+            text-decoration: none;
+            font-size: 19px;
+            padding: 12px 14px;
+            border-radius: 7px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #102a47;
+            background: #8eb6f5;
+        }
+
+        .section {
+            margin: 18px 4%;
+            padding: 45px 4%;
+            background: linear-gradient(110deg, #2466c4, #173c6d);
+            border: 4px solid #102a47;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px #0007;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-shadow: 2px 3px 4px #0007;
+        }
+
+        .form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 12px #0006;
+            text-align: left;
+        }
+
+        .form label {
+            display: block;
+            margin: 12px 0 7px;
+            font-weight: bold;
+        }
+
+        .form input,
+        .form select,
+        .form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #9db8dc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        .form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .button {
+            display: inline-block;
+            border: 0;
+            background: #2466c4;
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px #0005;
+        }
+
+        .button:hover {
+            background: #174a91;
+        }
+
+        .form .button {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #102a47;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .delivery-disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        @media (max-width: 950px) {
+
+            .navbar {
+                justify-content: center;
+                padding: 15px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-links a {
+                font-size: 15px;
+                padding: 9px 8px;
+            }
+
+            .section h2 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Tasty Delights
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="order.html" class="active">
+                Order
+            </a>
+
+            <a href="contacts.html">
+                Contacts
+            </a>
+
+            <a href="foods.html">
+                Foods
+            </a>
+
+            <a href="info.html">
+                Info
+            </a>
+               
+            <a href="delivery.html" id="deliveryLink">
+                Delivery
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="section">
+
+        <h2>
+            Place Your Order
+        </h2>
+
+
+        <form
+            class="form"
+            onsubmit="alert('Thank you! Your order has been submitted.'); return false;"
+        >
+
+            <label for="name">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="food">
+                Choose Food
+            </label>
+
+            <select
+                id="food"
+                required
+            >
+
+                <option value="">
+                    -- Select an item --
+                </option>
+
+                <option value="Cheesy Pizza">
+                    Cheesy Pizza - ₹199
+                </option>
+
+                <option value="Classic Burger">
+                    Classic Burger - ₹149
+                </option>
+
+                <option value="Italian Pasta">
+                    Italian Pasta - ₹179
+                </option>
+
+                <option value="Veggie Tacos">
+                    Veggie Tacos - ₹129
+                </option>
+
+                <option value="Cool Drink">
+                    Cool Drink - ₹79
+                </option>
+
+                <option value="Crispy Chicken">
+                    Crispy Chicken - ₹189
+                </option>
+
+                <option value="French Fries">
+                    French Fries - ₹99
+                </option>
+
+                <option value="Veg Wrap">
+                    Veg Wrap - ₹129
+                </option>
+
+                <option value="Club Sandwich">
+                    Club Sandwich - ₹139
+                </option>
+
+                <option value="Ice Cream">
+                    Ice Cream - ₹89
+                </option>
+
+                <option value="Chocolate Cake">
+                    Chocolate Cake - ₹119
+                </option>
+
+                <option value="Sweet Pancakes">
+                    Sweet Pancakes - ₹109
+                </option>
+
+                <option value="Margherita Pizza">
+                    Margherita Pizza - ₹179
+                </option>
+
+                <option value="Veg Noodles">
+                    Veg Noodles - ₹139
+                </option>
+
+                <option value="Fresh Salad">
+                    Fresh Salad - ₹109
+                </option>
+
+                <option value="Fruit Shake">
+                    Fruit Shake - ₹99
+                </option>
+
+            </select>
+
+
+            <label for="quantity">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity"
+                min="1"
+                value="1"
+                required
+            >
+
+
+            <label for="request">
+                Special Request
+            </label>
+
+            <textarea
+                id="request"
+                placeholder="Any special requests?"
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="button"
+            >
+                Place Order
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Tasty Delights | Codingal Project
+
+    </footer>
+
+
+    <script>
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    const selectedFood = params.get("food");
+
+    const foodSelect = document.getElementById("food");
+
+
+    if (selectedFood) {
+
+        for (let option of foodSelect.options) {
+
+            if (option.value === selectedFood) {
+
+                foodSelect.value = selectedFood;
+
+                break;
+
+            }
+
+        }
+
+    }
+
+
+    document.querySelector(".form").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const food = document.getElementById("food").value;
+        const quantity = document.getElementById("quantity").value;
+
+        if (!name || !food || !quantity) {
+            return;
+        }
+
+
+        
+
+        localStorage.setItem("orderPlaced", "true");
+
+        localStorage.setItem("customerName", name);
+
+        localStorage.setItem("orderedFood", food);
+
+        localStorage.setItem("quantity", quantity);
+
+
+        alert(
+            "Thank you, " +
+            name +
+            "! Your " +
+            food +
+            " order has been submitted."
+        );
+
+
+        
+
+        window.location.href = "delivery.html";
+
+    });
+
+
+    
+
+    const deliveryLink =
+        document.getElementById("deliveryLink");
+
+    if (localStorage.getItem("orderPlaced") !== "true") {
+
+        deliveryLink.classList.add("delivery-disabled");
+
+    }
+
+
+    
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            console.log(
+                "Opening " +
+                link.textContent.trim() +
+                " page"
+            );
+
+        });
+
+    });
+
+</script>
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,469 @@
+<html>
+<head>
+
+    <title>Home | Tasty Delights</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #cfe3ff;
+            color: #111;
+        }
+
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            min-height: 82px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #102a47;
+            border: 4px solid #8eb6f5;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 5px 14px #0007;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            color: #8eb6f5;
+            text-decoration: none;
+            font-size: 19px;
+            padding: 12px 14px;
+            border-radius: 7px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #102a47;
+            background: #8eb6f5;
+        }
+
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 65px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            margin-bottom: 18px;
+            text-shadow: 4px 5px 6px #0006;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto 28px;
+            font-size: 21px;
+            line-height: 1.6;
+        }
+
+
+        .button {
+            display: inline-block;
+            border: 0;
+            background: #2466c4;
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px #0005;
+        }
+
+        .button:hover {
+            background: #174a91;
+        }
+
+
+        .section {
+            margin: 18px 4px;
+            padding: 45px 4%;
+            background: linear-gradient(110deg, #2466c4, #173c6d);
+            border: 4px solid #102a47;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px #0007;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-shadow: 2px 3px 4px #0007;
+        }
+
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .card {
+            min-height: 300px;
+            padding: 28px 20px;
+            background: #fff;
+            border-radius: 13px;
+            box-shadow: 0 5px 12px #0006;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .food-icon {
+            font-size: 70px;
+            margin: 8px 0 15px;
+        }
+
+        .card h3 {
+            font-size: 26px;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .card strong {
+            font-size: 23px;
+            color: #174a91;
+        }
+
+
+        .content {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 5px 12px #0006;
+            text-align: left;
+        }
+
+        .content h3 {
+            font-size: 26px;
+            color: #174a91;
+            margin: 20px 0 10px;
+        }
+
+        .content p,
+        .content li {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            padding-left: 25px;
+        }
+
+
+        .form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 12px #0006;
+            text-align: left;
+        }
+
+        .form label {
+            display: block;
+            margin: 12px 0 7px;
+            font-weight: bold;
+        }
+
+        .form input,
+        .form select,
+        .form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #9db8dc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        .form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form .button {
+            margin-top: 20px;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #102a47;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+
+        @media (max-width: 950px) {
+
+            .navbar {
+                justify-content: center;
+                padding: 15px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links a {
+                font-size: 15px;
+                padding: 9px 8px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .section h2 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Tasty Delights
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html" class="active">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="order.html">
+                Order
+            </a>
+
+            <a href="contacts.html">
+                Contacts
+            </a>
+
+            <a href="foods.html">
+                Foods
+            </a>
+
+            <a href="info.html">
+                Info
+            </a>
+
+            <a href="delivery.html" id="deliveryLink">
+                Delivery
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>
+            Welcome to Tasty Delights
+        </h1>
+
+        <p>
+            Delicious food, friendly service, and a place to enjoy every bite.
+        </p>
+
+        <a class="button" href="menu.html">
+            Explore Our Menu
+        </a>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>
+            Our Favorites
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍕
+                </div>
+
+                <h3>
+                    Cheesy Pizza
+                </h3>
+
+                <p>
+                    Freshly baked pizza with delicious toppings.
+                </p>
+
+                <strong>
+                    ₹199
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍔
+                </div>
+
+                <h3>
+                    Classic Burger
+                </h3>
+
+                <p>
+                    A juicy burger with fresh vegetables and special sauce.
+                </p>
+
+                <strong>
+                    ₹149
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🍝
+                </div>
+
+                <h3>
+                    Italian Pasta
+                </h3>
+
+                <p>
+                    Delicious pasta tossed with a rich creamy sauce.
+                </p>
+
+                <strong>
+                    ₹179
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="food-icon">
+                    🥤
+                </div>
+
+                <h3>
+                    Cool Drink
+                </h3>
+
+                <p>
+                    A refreshing chilled drink to go with your meal.
+                </p>
+
+                <strong>
+                    ₹79
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Tasty Delights | Codingal Project
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                console.log("Opening " + link.textContent + " page");
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
